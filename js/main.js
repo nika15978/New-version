@@ -1,4 +1,4 @@
-// Accessing all div with box class
+
 const boxes = document.querySelectorAll('.box');
 const video2 = document.querySelector("#video2")
 const video = document.querySelector("#video")
@@ -9,15 +9,15 @@ const scrollUpBtn = document.querySelector('.scrollUp');
 const header = document.querySelector('header');
 const sidebar = document.querySelector('.fixed')
 let startingPosition = 0;
-const width = window.innerWidth
+let width = window.innerWidth;
 
 window.addEventListener('scroll', (e) => {
-    if (width <= 600 && e) {
-        checkBoxes();
-        updateheight();
+
+    checkBoxes();
 
 
-    }
+
+
     const currentPosition = window.scrollY;
     const isScrollUp = startingPosition < currentPosition;
     startingPosition = currentPosition;
@@ -31,10 +31,10 @@ window.addEventListener('scroll', (e) => {
     if (isScrollUp) {
 
         header.style.top = '-60px';
-        if (width <= 600) {
-            sidebar.style.top = '0px'
-        }
-        // sidebar.style.top = '0px'
+
+        sidebar.style.top = '0px'
+
+
 
 
 
@@ -46,10 +46,8 @@ window.addEventListener('scroll', (e) => {
     else {
 
         header.style.top = 0;
-        // sidebar.style.top = '49px'
-        if (width <= 600) {
-            sidebar.style.top = '49px'
-        }
+        sidebar.style.top = '60px'
+
 
     }
 });
@@ -66,28 +64,16 @@ function checkBoxes() {
     const triggerBottom = window.innerHeight / 5 * 4;
     boxes.forEach((box, idx) => {
         const boxTop = box.getBoundingClientRect().top;
-
         if (boxTop < triggerBottom) {
             box.classList.add('show');
         } else {
             box.classList.remove('show');
 
         }
+
     });
 }
-function updateheight() {
-    let sqrol = window.scrollY;
-    console.log(sqrol);
-    if (sqrol <= 744) {
-        video2.pause()
-        // video.currentTime(1);
 
-    }
-    if (sqrol >= 1427) {
-
-        video.pause()
-    }
-}
 
 
 beforeclick.addEventListener('click', (e) => {
@@ -98,4 +84,11 @@ beforeclick.addEventListener('click', (e) => {
 close.addEventListener('click', (e) => {
     humburger.classList.remove('movetoleft');
     humburger.classList.add('movetoright');
+})
+function updatewidth() {
+    width = window.innerWidth;
+
+}
+window.addEventListener("resize", (e) => {
+    updatewidth();
 })

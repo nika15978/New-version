@@ -10,6 +10,10 @@
 }
 
 @media(min-width:250px) {
+    .fixed {
+        display: none;
+    }
+
     header {
         position: fixed;
         top: 0;
@@ -30,6 +34,11 @@
         gap: 10px;
         text-decoration: none;
         color: black;
+    }
+
+    header .header-midlle,
+    header .right-content {
+        display: none;
     }
 
     .bfclick svg {
@@ -62,11 +71,13 @@
         margin-top: 55px !important;
     }
 
+
+
     .box {
         background-color: transparent;
         border-radius: 10px;
         box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-        margin: 10px;
+        margin: 5px;
         width: 100%;
         height: max-content;
         padding: 10px;
@@ -89,6 +100,16 @@
         background-color: var(--silver);
         width: 100%;
         height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    footer .icons a img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+
     }
 
     video {
@@ -97,17 +118,15 @@
         object-fit: contain;
     }
 
-    .video {
-        width: 250px !important;
-        height: 250px !important;
-        object-fit: contain;
-    }
+
 
     .video-dimensions,
-    .video2-dimensions {
-        width: 250px;
-        height: 250px;
-        margin-left: 10px;
+    .video2-dimensions,
+    .vjs_video_1131-dimensions,
+    .video-js {
+        width: 100% !important;
+        height: 250px !important;
+        margin-left: 5px;
     }
 
     .topboxes {
@@ -120,6 +139,112 @@
         padding: 10px;
         transform: translateX(0%);
         transition: transform 0.4s ease;
+    }
+}
+
+@media(min-width:600px) {
+    header {
+        height: 60px;
+    }
+
+    .box {
+        transform: translateX(0);
+    }
+
+    .box:nth-of-type(even) {
+        transform: translateX(0%);
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        left: 16px;
+        top: 10px;
+    }
+
+    main .media {
+        width: 500px;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .fixed {
+        position: fixed;
+        left: 0;
+        top: 60px;
+        z-index: 10;
+        background-color: var(--silver);
+        width: 60px;
+        height: max-content;
+        display: grid;
+        place-items: center;
+        gap: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: .4s ease;
+
+    }
+
+
+
+    .fixed .icons a img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+
+    }
+
+    .lastbox {
+        margin-bottom: 10px !important;
+    }
+}
+
+@media (min-width:900px) {
+
+
+    header .right-content {
+        display: block;
+    }
+
+    header .header-midlle {
+        position: relative;
+        left: 80px;
+    }
+
+    header .bfclick {
+        display: none;
+    }
+
+    header .right-content {
+        display: flex;
+        gap: 15px;
+        position: relative;
+        right: 35px;
+    }
+
+    main {
+
+        left: 0;
+        top: 10px;
+    }
+
+    main .media {
+        width: 800px;
+    }
+
+
+
+}
+
+@media(min-width:1050px) {
+
+    header .header-midlle {
+        display: block;
+        position: relative;
+        left: 80px;
     }
 }
 
@@ -235,6 +360,91 @@
 
 }
 
+.right-content .change-language .options {
+    display: none;
+    position: absolute;
+    z-index: 51;
+    background-color: #fff;
+    width: 115px;
+    box-shadow: 0 13px 16px 0 rgba(0, 0, 0, .1);
+    transition: all .2s ease-in-out;
+    border: solid 1px #f5f5f5;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    text-align: center;
+    padding: 10px;
+    right: -26px;
+    top: 30px;
+    height: 100px;
+
+}
+
+.right-content .navigation a {
+    color: black;
+    text-decoration: none;
+}
+
+.right-content .navigation a:hover {
+    color: #0a3251;
+    border-bottom: solid 1px #0a3251;
+}
+
+.right-content .change-language .options .style-el {
+    padding-top: 10px;
+    color: #99a8b4 !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.right-content .change-language .options .style-el a {
+    color: #99a8b4;
+    text-decoration: none;
+}
+
+.right-content .change-language .options .style-el a:hover {
+    color: #0a3251 !important;
+}
+
+
+
+.right-content .change-language:focus-within>.options,
+.right-content .change-language:hover>.options {
+    display: block;
+    transition: all .2s ease-in-out;
+}
+
+.right-content .change-language {
+    color: #99a8b4 !important;
+    width: 112px;
+    text-align: end;
+    height: 30px;
+    cursor: pointer;
+    align-items: center;
+    border-left: #99a8b4 solid 0.5px !important;
+    position: relative;
+}
+
+
+
+.right-content .change-language .change img {
+    width: 12px;
+    height: 12px;
+    gap: 10px;
+    transition: all .2s ease-in-out;
+
+
+}
+
+.right-content .change-language:focus-within>.change img,
+.right-content .change-language:hover>.change img {
+    transform: rotate(-180deg);
+    transition: all .2s ease-in-out;
+
+}
+
+
 .scrollUp {
     width: 50px;
     height: 50px;
@@ -254,4 +464,8 @@
 
 .scrollUp img {
     transform: rotate(180deg);
+}
+
+.active {
+    border-bottom: #0a3251 solid 1px;
 }

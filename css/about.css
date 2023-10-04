@@ -1,0 +1,58 @@
+@media(min-width:250px) {
+
+
+    body {
+        background-color: #EAEAEA !important;
+    }
+
+    .about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #EAEAEA;
+
+    }
+
+    .box1 {
+        background-color: transparent;
+        border-radius: 10px;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        margin: 10px;
+        width: 80%;
+
+        padding: 10px;
+        position: relative;
+        top: 60px;
+        padding-bottom: 60px;
+
+
+    }
+
+
+
+    .bcimg {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-image: url(../imges/IMG-20230812-WA0003.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        border-radius: 0 20px;
+        transform: rotate(-20deg);
+        left: 20px;
+    }
+
+    .contetn {
+        margin-top: 60px !important;
+    }
+
+    h2 {
+        position: absolute;
+        left: 90px;
+    }
+}
+
+.active {
+    border-bottom: #0a3251 solid 1px;
+}
